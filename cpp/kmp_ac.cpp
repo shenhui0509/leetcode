@@ -21,8 +21,8 @@ void get_next()
 {
     nxt[0] = -1;
     int i = 0, j = -1;
-    while( i < p.size()){
-        if(j == -1 || p[j] == p[i]){
+    while( i < s.size()){
+        if(j == -1 || p[j] == s[i]){
             i++;
             j++;
             nxt[i] = j;
@@ -30,6 +30,11 @@ void get_next()
             j = nxt[j];
         }
     }
+    for(i = 0; i < p.size(); i++){
+        cout << p[i] << " ";
+        cout << nxt[i] << "  ";
+    }
+    cout << endl;
 }
 
 int kmp()
@@ -37,24 +42,32 @@ int kmp()
     get_next();
     int i = 0, j = 0, ans = 0;
     while(i < s.size()) {
-        if(j == -1 || s[i] == p[j]) {
+        // /cout << j << endl;
+        if(j == 0 || s[i] == p[j]) {
+            cout << "j = " << j << " i = " << i << endl; 
+            cout << "p[j] = " << p[j] << " s[i] = " << s[i] << endl; 
             i++;
             j++;    
         } else {
-            j == nxt[j];
+            cout << "j = " << j << " i = " << i << endl; 
+            j = nxt[j];
         }
-        if(j == p.size())
+        if(j == p.size() - 1){
             ans++;
+            j = 0;
+        }
     }
     return ans;
 }
 
 int main()
 {
+    freopen("in","r",stdin);
     cin >> n;
     while(n--){
         cin >> p >> s;
         cout << kmp() << endl;
     }
+    fclose(stdin);
     return 0;
 }
