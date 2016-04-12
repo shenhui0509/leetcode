@@ -15,19 +15,22 @@ typedef long long ll;
 #define mx 1000005
 int n;
 int nxt[mx];
+int pi[mx];
 string s,p;
 
 void get_next()
 {
     nxt[0] = -1;
     int i = 0, j = -1;
-    while( i < s.size()){
-        if(j == -1 || p[j] == s[i]){
+    while( i < p.size()){
+        if(j == -1 || p[j] == p[i]){
             i++;
             j++;
             nxt[i] = j;
+            cout << i << " " << j << " " << nxt[i] << endl;
         } else {
             j = nxt[j];
+            cout << i << " " << j << " " << nxt[i] << endl;
         }
     }
     for(i = 0; i < p.size(); i++){
@@ -44,12 +47,12 @@ int kmp()
     while(i < s.size()) {
         // /cout << j << endl;
         if(j == 0 || s[i] == p[j]) {
-            cout << "j = " << j << " i = " << i << endl; 
-            cout << "p[j] = " << p[j] << " s[i] = " << s[i] << endl; 
+            // cout << "j = " << j << " i = " << i << endl; 
+            // cout << "p[j] = " << p[j] << " s[i] = " << s[i] << endl; 
             i++;
             j++;    
         } else {
-            cout << "j = " << j << " i = " << i << endl; 
+            // cout << "j = " << j << " i = " << i << endl; 
             j = nxt[j];
         }
         if(j == p.size() - 1){
