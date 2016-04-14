@@ -29,5 +29,17 @@ int main(int argc, char const *argv[])
     justify(s, 16);
     cout << s << endl;
     cout << s.size() << endl;
+    cout << to_string(1234) << endl;
+    string t = s + "man's world";
+    cout << s << endl << t << endl;
+    if(false and true) 
+        printf("wow! C++ has the or operator!\n");
+    else
+        printf("what a pity\n");
+    istringstream ss("1 2 3 4 5 6 7 8");
+    int n;
+    while(ss>>n){
+        cout << n << endl;
+    }
     return 0;
 }
