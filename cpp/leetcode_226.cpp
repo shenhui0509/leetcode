@@ -6,7 +6,7 @@ struct TreeNode{
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x),left(NULL),right(){}
-}
+};
 
 void insert(TreeNode* root, int val){
     if()
