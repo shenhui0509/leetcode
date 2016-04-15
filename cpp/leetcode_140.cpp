@@ -15,7 +15,7 @@ void dfs(string s, vector<vector<bool>>& seg, int start, int length,
             }
             int c = cur.size();
             cur += tmp;
-            if(start + len < length - 1){
+            if(start + len < length){
                 cur.append(" ");  
             }
             dfs(s, seg, start+len,length,start+len,result,cur,dic);
