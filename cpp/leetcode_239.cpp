@@ -9,16 +9,16 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k){
 
     for(int i = 0; i < nums.size(); i++){
         while(!q.empty() && nums[q.back()] <= nums[i]){
-            printf("current queue tail: (%d, %d)\n", q.back(), nums[q.back()]);
+        //     printf("current queue tail: (%d, %d)\n", q.back(), nums[q.back()]);
             q.pop_back(); 
         }
         q.push_back(i);
         if(q.front() <= i - k){
-            printf("current queue head: (%d, %d)\n", q.front(), nums[q.front()]);
+            // printf("current queue head: (%d, %d)\n", q.front(), nums[q.front()]);
             q.pop_front();
         }
         if(i >= k-1){
-            printf("push current queue head: (%d, %d)\n", q.front(), nums[q.front()]);
+            // printf("push current queue head: (%d, %d)\n", q.front(), nums[q.front()]);
             win.push_back(nums[q.front()]);
         }   
     }
