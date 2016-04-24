@@ -76,10 +76,8 @@ void reorderList(ListNode* head)
         fast = fast->next->next;
     }
     ListNode* p2 = slow->next;
-    print_list(p2);
     slow->next = NULL;
     p2 = reverse(p2);
-    print_list(p2);
     head = merge(head, p2);
 }
 
