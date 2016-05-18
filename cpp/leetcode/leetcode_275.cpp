@@ -5,7 +5,7 @@ int hIndex(vector<int>& cite)
 {
     if(cite.empty()) return 0;
     int left = 0, len = cite.size(), right = len - 1;
-    while(left <= end){
+    while(left <= right){
         int mid = left + (end - left) / 2;
         if(cite[mid] < len - mid){
             left = mid + 1;

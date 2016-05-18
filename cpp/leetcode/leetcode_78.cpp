@@ -3,7 +3,8 @@ using namespace std;
 
 //Backtracking
 void dfs(vector<int>& nums, vector<int>& cur, int index, vector<vector<int>>& ret){
-    ret.push_back(cur);
+    if(index == nums.size())
+        ret.push_back(cur);
     for (int i = index; i < nums.size(); i++) {
         cur.push_back(nums[i]);
         dfs(nums, cur, i + 1, ret);

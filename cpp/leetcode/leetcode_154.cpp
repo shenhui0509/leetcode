@@ -7,7 +7,7 @@ int findMin(vector<int>& nums){
         mid = lo + (hi - lo) / 2;
         if(nums[mid] > nums[hi]){
             lo = mid + 1;
-        } else if (nums[mid] > nums[hi]){
+        } else if (nums[mid] < nums[hi]){
             hi = mid;
         } else hi--;
     }

@@ -6,8 +6,8 @@ void gameOfLife(vector<vector<int>>& board){
     for(int i = 0; i < m; i++){
         for(int j = 0; j < n; j++){
             int cnt = 0;
-            for(int I = max(i-1,0); I < min(i+2,m); i++){
-                for(int J = max(j-1,0); J < min(j+2,n); j++){
+            for(int I = max(i-1,0); I < min(i+2,m); I++){
+                for(int J = max(j-1,0); J < min(j+2,n); J++){
                     cnt += board[I][J] & 1;
                 }
             }
